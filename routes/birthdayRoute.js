@@ -8,7 +8,7 @@ router.get('/date/:month/:day', async (req, res) => {
     const result = await getSignFromMonthAndDay(req, res)
     return result
   } catch (error) {
-    console.error(error)
+    console.log('Error: ' + error.message)
     return res.status(500).json({ error: 'Internal Server Error' })
   }
 })
