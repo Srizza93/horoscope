@@ -3,7 +3,7 @@ const CustomError = require('../errors/customError')
 const { INCORRECT_MONTH, INCORRECT_DAY } = require('../errors/errorCodes')
 
 module.exports = {
-  getSign: async (req, res) => {
+  getSign: (req, res) => {
     try {
       const monthRegex = /^(0[1-9]|1[0-2])$/
       const dayRegex = /^(0[1-9]|1[0-9]|2[0-9]|3[0-2])$/
@@ -21,7 +21,7 @@ module.exports = {
       return res.json({ sign })
     } catch (error) {
       console.log('Error: ' + error.message)
-      return res.status(error.status_code).json({ error: error.message })
+      return res.status(500).json({ error: 'Internal Server Error' })
     }
   }
 }
