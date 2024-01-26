@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
-const birthdayRoute = require('./routes/birthdayRoute.js')
-const { errorHandler } = require('./errors/errorHandler.js')
+const birthdayRoute = require('./src/routes/birthdayRoute.js')
+const { errorHandler } = require('./src/errors/errorHandler.js')
 const app = express()
 const port = 3000
 
