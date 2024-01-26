@@ -1,7 +1,7 @@
 const request = require('supertest')
 const app = require('../index.js')
 
-describe('Index app', () => {
+describe('Sign', () => {
   it('should return a sign with a birthdate in request', async () => {
     return request(app)
       .get('/api/birthday/date/12/11')
